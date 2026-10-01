@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday, Rifat Nisha</title>
+
+<!-- ============================================================
+     GOOGLE FONTS
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     TAILWIND (CDN — utility classes only, design system is custom CSS below)
+     ============================================================ -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* ==================================================================
+   1. CUSTOMIZATION ZONE — edit colors / text / timings here
+   ================================================================== */
+:root{
+  /* ---- palette (lavender, raspberry, gold & peach — light theme) ---------------- */
+  --c-pearl:        #fdfaff;   /* main background            */
+  --c-mist:         #f0eafb;   /* sage-tinted sections       */
+  --c-blush:        #ffeee6;   /* rose-tinted sections       */
+  --c-white:        #ffffff;
+  --c-ink:          #2a1f3d;   /* headings / primary text    */
+  --c-ink-soft:     #5d5276;   /* body text                  */
+  --c-ink-faint:    #8c82a3;   /* small labels               */
+  --c-rose:         #c2306f;   /* main accent                */
+  --c-rose-soft:    #f08fb5;
+  --c-emerald:      #a9760f;   /* secondary accent           */
+  --c-emerald-soft: #f2cf7a;
+  --c-line:         rgba(42,31,61,.12);
+
+  /* ---- type ------------------------------------------------------ */
+  --f-display: 'Playfair Display', serif;
+  --f-heading: 'Sora', sans-serif;
+  --f-body:    'Manrope', sans-serif;
+  --f-arabic:  'Amiri', serif;
+
+  /* ---- motion ------------------------------------------------------ */
+  --ease-lux: cubic-bezier(.16,.84,.24,1);
+  --ease-soft: cubic-bezier(.4,0,.2,1);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html,body{
+  background:var(--c-pearl);
+  color:var(--c-ink);
+  font-family:var(--f-body);
+  overflow-x:hidden;
+  width:100%;
+  margin:0;
+}
+body{cursor:none;}
+@media (max-width:860px), (hover:none){ body{cursor:auto;} }
+
+::selection{ background:rgba(194,48,111,.25); color:var(--c-ink); }
+
+h1,h2,h3,.font-display{ font-family:var(--f-display); color:var(--c-ink); }
+.font-heading{ font-family:var(--f-heading); }
+.font-arabic{ font-family:var(--f-arabic); direction:rtl; }
+p, li{ color:var(--c-ink-soft); }
+
+/* ==================================================================
+   2. GLASSMORPHISM SYSTEM — four tuned levels (light)
+   ================================================================== */
+.glass-subtle{
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(14px) saturate(120%);
+  -webkit-backdrop-filter:blur(14px) saturate(120%);
+  border:1px solid rgba(42,31,61,.08);
+}
+.glass-medium{
+  background:linear-gradient(160deg, rgba(255,255,255,.85), rgba(255,255,255,.5));
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
+  border:1px solid rgba(42,31,61,.09);
+  box-shadow:0 20px 50px -26px rgba(42,31,61,.22), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.glass-strong{
+  background:linear-gradient(160deg, rgba(255,255,255,.92), rgba(255,255,255,.6));
+  backdrop-filter:blur(28px) saturate(150%);
+  -webkit-backdrop-filter:blur(28px) saturate(150%);
+  border:1px solid rgba(194,48,111,.28);
+  box-shadow:0 30px 70px -28px rgba(194,48,111,.28), inset 0 1px 0 rgba(255,255,255,.95);
+}
+.glass-cinematic{
+  background:linear-gradient(200deg, rgba(255,255,255,.75), rgba(255,255,255,.45));
+  backdrop-filter:blur(8px) saturate(115%);
+  -webkit-backdrop-filter:blur(8px) saturate(115%);
+  border:1px solid rgba(42,31,61,.08);
+  box-shadow:0 24px 60px -30px rgba(42,31,61,.25);
+}
+
+/* ==================================================================
+   3. LAYOUT PRIMITIVES + SECTION TONES
+   ================================================================== */
+.section{
+  position:relative;
+  min-height:100vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:7rem 1.5rem;
+}
+.section-inner{ width:100%; max-width:1180px; margin:0 auto; }
+
+.tone-pearl{ background:var(--c-pearl); }
+.tone-mist{  background:linear-gradient(180deg, #f6f1fd, var(--c-mist)); }
+.tone-blush{ background:linear-gradient(180deg, #fff4ee, var(--c-blush)); }
+
+.eyebrow{
+  font-family:var(--f-heading);
+  font-size:.72rem;
+  letter-spacing:.28em;
+  color:var(--c-rose);
+  font-weight:600;
+}
+.rule{ height:1px; width:100%; background:linear-gradient(90deg, transparent, rgba(42,31,61,.2), transparent); }
+.grain::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  pointer-events:none; mix-blend-mode:multiply; opacity:.45;
+}
+
+/* ==================================================================
+   4. LOADING SCREEN
+   ================================================================== */
+#loader{
+  position:fixed; inset:0; z-index:200;
+  background:
+    radial-gradient(60% 50% at 50% 30%, rgba(240,143,181,.22), transparent 65%),
+    var(--c-pearl);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.1rem;
+  transition:opacity .9s var(--ease-lux), visibility .9s var(--ease-lux);
+}
+#loader.hide{ opacity:0; visibility:hidden; pointer-events:none; }
+.loader-mark{
+  font-family:var(--f-display); font-style:italic; font-weight:600;
+  font-size:2.6rem; color:var(--c-rose);
+  opacity:0; animation:loaderMark 1.6s var(--ease-lux) forwards;
+}
+.loader-name{
+  font-family:var(--f-heading); font-weight:500; letter-spacing:.32em;
+  font-size:.72rem; color:var(--c-ink-soft); text-transform:uppercase;
+  opacity:0; animation:loaderName 1.6s .5s var(--ease-lux) forwards;
+}
+.loader-bar{ width:140px; height:1px; background:rgba(42,31,61,.14); position:relative; overflow:hidden; }
+.loader-bar::after{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:0%;
+  background:linear-gradient(90deg, var(--c-rose), var(--c-emerald));
+  animation:loaderBar 1.7s .3s var(--ease-lux) forwards;
+}
+@keyframes loaderMark{ from{opacity:0; letter-spacing:.1em;} to{opacity:1; letter-spacing:normal;} }
+@keyframes loaderName{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+@keyframes loaderBar{ from{width:0%;} to{width:100%;} }
+
+/* ==================================================================
+   5. CUSTOM CURSOR (desktop only)
+   ================================================================== */
+#cursor-dot, #cursor-ring{
+  position:fixed; top:0; left:0; pointer-events:none; z-index:9999;
+  transform:translate(-50%,-50%); border-radius:50%;
+}
+#cursor-dot{ width:5px; height:5px; background:var(--c-rose); }
+#cursor-ring{
+  width:34px; height:34px; border:1px solid rgba(194,48,111,.5);
+  transition:width .25s var(--ease-soft), height .25s var(--ease-soft), border-color .25s var(--ease-soft), background .25s var(--ease-soft);
+}
+#cursor-ring.grow{ width:56px; height:56px; background:rgba(194,48,111,.08); border-color:rgba(194,48,111,.85); }
+@media (max-width:860px), (hover:none){ #cursor-dot,#cursor-ring{ display:none; } }
+
+/* ==================================================================
+   6. HERO
+   ================================================================== */
+#hero{
+  min-height:100svh; position:relative; overflow:hidden;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:0 1.5rem;
+  background:
+    radial-gradient(60% 50% at 50% 18%, rgba(240,143,181,.28), transparent 62%),
+    radial-gradient(80% 60% at 50% 100%, rgba(242,207,122,.38), transparent 60%),
+    var(--c-pearl);
+}
+.hero-stage{ position:relative; z-index:2; }
+.hero-line{
+  font-family:var(--f-display);
+  font-weight:500;
+  color:var(--c-ink);
+  opacity:0;
+  filter:blur(14px);
+  transform:scale(1.06);
+  letter-spacing:.02em;
+}
+.hero-line.day{ font-size:clamp(3.6rem,13vw,8rem); color:var(--c-rose); }
+.hero-line.month{ font-size:clamp(1rem,3.6vw,1.8rem); letter-spacing:.5em; font-family:var(--f-heading); font-weight:400; text-transform:uppercase; color:var(--c-ink-soft);}
+.hero-line.name{ font-size:clamp(2.4rem,7vw,4.6rem); font-style:italic; }
+.hero-line.tagline{ font-size:clamp(.95rem,2vw,1.2rem); font-family:var(--f-body); font-style:normal; color:var(--c-ink-soft); letter-spacing:.02em; font-weight:400; max-width:36ch; margin:0 auto; line-height:1.7; }
+
+.hero-scroll-cue{
+  position:absolute; bottom:2.4rem; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.6rem;
+  opacity:0; z-index:2;
+}
+.hero-scroll-cue span{ font-size:.62rem; letter-spacing:.3em; color:var(--c-ink-faint); font-family:var(--f-heading); }
+.scroll-line{ width:1px; height:34px; background:linear-gradient(var(--c-rose), transparent); }
+
+/* ==================================================================
+   7. STAT / PANEL SYSTEM
+   ================================================================== */
+.panel-frame{
+  position:relative; overflow:hidden; border-radius:2px;
+  background:
+    radial-gradient(120% 100% at 20% 0%, rgba(242,207,122,.5), transparent 60%),
+    radial-gradient(100% 100% at 90% 100%, rgba(240,143,181,.42), transparent 55%),
+    var(--c-white);
+  border:1px solid rgba(42,31,61,.07);
+  box-shadow:0 30px 70px -36px rgba(42,31,61,.3);
+  display:flex; align-items:center; justify-content:center;
+}
+.panel-frame .big-num{
+  font-family:var(--f-display); font-weight:600; color:var(--c-rose);
+  font-size:clamp(3.5rem,9vw,6.5rem); line-height:1.05;
+}
+.panel-frame .big-num-label{
+  font-family:var(--f-heading); letter-spacing:.3em; font-size:.72rem;
+  color:var(--c-ink-soft); text-transform:uppercase; margin-top:.8rem;
+}
+.panel-overlay-side{
+  position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(100deg, rgba(255,255,255,.45) 0%, rgba(255,255,255,.05) 45%, transparent 70%);
+}
+
+/* ==================================================================
+   8. REVEAL UTILITIES (scroll-triggered via IntersectionObserver)
+   ================================================================== */
+.reveal{
+  opacity:0; transform:translateY(28px);
+  transition:opacity 1.1s var(--ease-lux), transform 1.1s var(--ease-lux), filter 1.1s var(--ease-lux);
+  filter:blur(6px);
+}
+.reveal.in{ opacity:1; transform:translateY(0); filter:blur(0); }
+.reveal-scale{ opacity:0; transform:scale(.94); filter:blur(8px); transition:opacity 1.2s var(--ease-lux), transform 1.2s var(--ease-lux), filter 1.2s var(--ease-lux); }
+.reveal-scale.in{ opacity:1; transform:scale(1); filter:blur(0); }
+.reveal-line{ opacity:0; transform:translateX(-18px); transition:opacity 1s var(--ease-lux), transform 1s var(--ease-lux); }
+.reveal-line.in{ opacity:1; transform:translateX(0); }
+.d1{transition-delay:.08s;} .d2{transition-delay:.18s;} .d3{transition-delay:.30s;} .d4{transition-delay:.42s;} .d5{transition-delay:.54s;} .d6{transition-delay:.66s;}
+
+/* ==================================================================
+   9. TIMELINE (TODAY'S PATH)
+   ================================================================== */
+.timeline{ position:relative; }
+.timeline-track{
+  position:relative; margin:0 auto; max-width:760px;
+  border-left:1px solid var(--c-line);
+  padding-left:2.4rem;
+}
+.timeline-item{ position:relative; padding:2.1rem 0; }
+.timeline-item::before{
+  content:""; position:absolute; left:-2.51rem; top:2.5rem;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--c-rose); box-shadow:0 0 0 4px rgba(194,48,111,.14);
+}
+.timeline-num{ font-family:var(--f-heading); font-size:.7rem; letter-spacing:.28em; color:var(--c-ink-faint); }
+.timeline-title{ font-family:var(--f-display); font-size:clamp(1.6rem,3.6vw,2.6rem); margin-top:.35rem; color:var(--c-ink); }
+.timeline-sub{ font-family:var(--f-body); font-weight:400; font-size:1rem; color:var(--c-ink-soft); margin-top:.4rem; }
+
+/* ==================================================================
+   10. CARDS
+   ================================================================== */
+.char-card{
+  position:relative; padding:2.1rem 1.8rem; border-radius:14px;
+  transition:transform .5s var(--ease-lux), box-shadow .5s var(--ease-lux), background .5s var(--ease-lux);
+}
+.char-card:hover{ transform:translateY(-6px); box-shadow:0 34px 70px -28px rgba(194,48,111,.32), inset 0 1px 0 rgba(255,255,255,.9); }
+.char-card .mark{ display:block; width:22px; height:2px; background:linear-gradient(90deg, var(--c-rose), var(--c-emerald)); border-radius:2px; }
+.char-card h3{ font-family:var(--f-heading); font-weight:600; font-size:1.05rem; letter-spacing:.03em; margin-top:1rem; color:var(--c-ink); }
+.char-card p{ margin-top:.75rem; color:var(--c-ink-soft); font-weight:400; font-size:.95rem; line-height:1.65; }
+
+/* ==================================================================
+   11. NAV
+   ================================================================== */
+#floatnav{
+  position:fixed; top:1.4rem; left:50%; transform:translateX(-50%);
+  z-index:100; display:flex; gap:.3rem; padding:.4rem; border-radius:999px;
+  opacity:0; pointer-events:none;
+  background:linear-gradient(160deg, rgba(255,255,255,.88), rgba(255,255,255,.66));
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  border:1px solid rgba(42,31,61,.10);
+  box-shadow:0 14px 40px -18px rgba(42,31,61,.3);
+  transition:opacity 1s var(--ease-lux) .2s, top .4s var(--ease-soft);
+}
+#floatnav.show{ opacity:1; pointer-events:auto; }
+#floatnav a{
+  font-family:var(--f-heading); font-size:.66rem; letter-spacing:.16em; font-weight:500;
+  padding:.55rem 1rem; border-radius:999px; text-decoration:none; color:var(--c-ink);
+  transition:color .3s, background .3s;
+  white-space:nowrap;
+}
+#floatnav a:hover{ color:var(--c-rose); background:rgba(194,48,111,.08); }
+#floatnav a:focus-visible{ outline:2px solid var(--c-rose); outline-offset:2px; }
+@media (max-width:560px){
+  #floatnav{ max-width:calc(100vw - 1.5rem); overflow-x:auto; }
+  #floatnav a{ padding:.5rem .7rem; letter-spacing:.1em; }
+}
+
+/* ==================================================================
+   12. FINAL REVEAL / SIGNATURE
+   ================================================================== */
+.big-reveal-line{
+  font-family:var(--f-display); font-weight:500; color:var(--c-ink);
+  opacity:0; filter:blur(10px); transform:scale(1.04);
+}
+.light-sweep{
+  position:absolute; top:50%; left:50%; width:140%; height:140%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(240,143,181,.28), transparent 60%);
+  pointer-events:none;
+}
+.signature{
+  font-family:var(--f-display); font-style:italic; font-size:clamp(1.6rem,3.4vw,2.3rem); color:var(--c-ink);
+}
+
+/* ==================================================================
+   12.5 AYAH BLOCK
+   ================================================================== */
+.ayah-arabic{
+  font-family:var(--f-arabic);
+  font-size:clamp(1.6rem,4.2vw,2.6rem);
+  line-height:2.1;
+  color:var(--c-emerald);
+  direction:rtl;
+}
+.ayah-arabic.small{ font-size:clamp(1.3rem,3.2vw,1.9rem); }
+.ayah-translation{
+  font-family:var(--f-body); font-weight:400; font-style:italic;
+  color:var(--c-ink-soft); font-size:1rem; line-height:1.8;
+}
+.ayah-ref{
+  font-family:var(--f-heading); letter-spacing:.24em; font-size:.68rem;
+  color:var(--c-ink-faint); text-transform:uppercase;
+}
+
+/* ==================================================================
+   13. MISC
+   ================================================================== */
+.checklist{ list-style:none; padding:0; margin:0; }
+.checklist li{
+  position:relative; padding-left:1.6rem; font-family:var(--f-heading); font-weight:300;
+  color:var(--c-ink-soft); font-size:1rem; line-height:1.6;
+}
+.checklist li::before{
+  content:""; position:absolute; left:0; top:.62em; width:.7rem; height:1px; background:var(--c-rose);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+  .reveal,.reveal-scale,.reveal-line{ opacity:1 !important; transform:none !important; filter:none !important; }
+}
+
+/* scrollbar (subtle, desktop) */
+::-webkit-scrollbar{ width:9px; }
+::-webkit-scrollbar-track{ background:var(--c-pearl); }
+::-webkit-scrollbar-thumb{ background:rgba(194,48,111,.35); border-radius:6px; }
+
+/* ==================================================================
+   14. BIRTHDAY ADDITIONS — gift loader, balloons, sparkles, confetti, cake
+   ================================================================== */
+body:not(.opened){ overflow:hidden; }
+#confetti{ position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:300; }
+.gift{ width:150px; height:150px; overflow:visible; margin-top:.6rem; animation:giftBob 2.4s ease-in-out infinite; filter:drop-shadow(0 18px 22px rgba(194,48,111,.28)); }
+.gift .lid{ transform-origin:70px 60px; transition:transform .9s var(--ease-lux); }
+#loader.open .gift{ animation:none; }
+#loader.open .gift .lid{ transform:translate(14px,-58px) rotate(16deg); }
+#loader.open .gift-btn{ opacity:0; pointer-events:none; }
+@keyframes giftBob{ 0%,100%{ transform:translateY(0) rotate(-2deg);} 50%{ transform:translateY(-10px) rotate(2deg);} }
+.gift-btn{
+  position:relative; font-family:var(--f-heading); font-weight:600; font-size:.78rem; letter-spacing:.16em;
+  color:#fff; background:linear-gradient(135deg,var(--c-rose),#e0568f); border:0; border-radius:999px;
+  padding:.95rem 1.9rem; box-shadow:0 16px 34px -14px rgba(194,48,111,.7);
+  transition:transform .3s var(--ease-soft), opacity .5s;
+}
+.gift-btn:hover{ transform:translateY(-2px) scale(1.03); }
+.gift-btn:focus-visible{ outline:2px solid var(--c-emerald); outline-offset:3px; }
+.gift-btn::after{ content:""; position:absolute; inset:-6px; border-radius:999px; border:1px solid rgba(194,48,111,.45); animation:pulseRing 2s ease-out infinite; }
+@keyframes pulseRing{ from{ transform:scale(.94); opacity:.9;} to{ transform:scale(1.18); opacity:0;} }
+
+.hero-deco{ position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:1; }
+.balloon{ position:absolute; bottom:-130px; width:52px; height:66px; border-radius:50% 50% 48% 48%; opacity:0; background:radial-gradient(circle at 32% 28%, rgba(255,255,255,.75), transparent 28%), var(--bg); box-shadow:inset -6px -8px 14px rgba(0,0,0,.08); }
+.balloon::after{ content:""; position:absolute; left:50%; top:100%; width:1px; height:70px; background:rgba(42,31,61,.28); }
+body.opened .balloon{ animation:rise var(--t) linear var(--d) infinite; }
+@keyframes rise{ 0%{ transform:translate(0,0) rotate(-4deg); opacity:0;} 8%{ opacity:.9;} 50%{ transform:translate(20px,-60vh) rotate(4deg);} 92%{ opacity:.9;} 100%{ transform:translate(-10px,-125vh) rotate(-3deg); opacity:0;} }
+.spark{ position:absolute; width:12px; height:12px; background:var(--c-emerald-soft); clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%); opacity:0; animation:twinkle 3.2s ease-in-out infinite; }
+@keyframes twinkle{ 0%,100%{ opacity:0; transform:scale(.3) rotate(0);} 50%{ opacity:.95; transform:scale(1) rotate(90deg);} }
+.shimmer{ background:linear-gradient(100deg,var(--c-ink) 30%,var(--c-rose) 45%,var(--c-emerald) 55%,var(--c-ink) 70%); background-size:250% 100%; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; animation:shimmerMove 5s linear infinite; }
+@keyframes shimmerMove{ from{ background-position:120% 0;} to{ background-position:-120% 0;} }
+.hero-line.day{ animation:softPulse 4.5s ease-in-out 4s infinite; }
+@keyframes softPulse{ 0%,100%{ text-shadow:0 0 0 rgba(194,48,111,0);} 50%{ text-shadow:0 10px 40px rgba(194,48,111,.28);} }
+
+.cake{ width:min(300px,78vw); margin:0 auto; overflow:visible; }
+.flame{ transform-box:fill-box; transform-origin:50% 100%; animation:flick .45s ease-in-out infinite alternate; transition:opacity .5s, transform .5s; }
+.flame:nth-of-type(2){ animation-delay:.15s; } .flame:nth-of-type(3){ animation-delay:.3s; }
+@keyframes flick{ from{ transform:scale(1,1) rotate(-3deg);} to{ transform:scale(.88,1.12) rotate(3deg);} }
+#cakeBox.out .flame{ opacity:0; transform:scale(0); animation:none; }
+#wishNote{ min-height:2.2rem; font-style:italic; color:var(--c-rose); transition:opacity .8s var(--ease-lux); }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- LOADING SCREEN + SURPRISE GIFT -->
+<div id="loader">
+  <div class="loader-mark">R</div>
+  <div class="loader-name">RIFAT NISHA</div>
+  <div class="loader-bar"></div>
+  <svg class="gift" viewBox="0 0 140 140" aria-hidden="true">
+    <rect x="25" y="62" width="90" height="64" rx="7" style="fill:var(--c-rose-soft)"/>
+    <rect x="64" y="62" width="12" height="64" style="fill:var(--c-emerald-soft)"/>
+    <g class="lid">
+      <rect x="18" y="44" width="104" height="22" rx="7" style="fill:var(--c-rose)"/>
+      <rect x="64" y="44" width="12" height="22" style="fill:var(--c-emerald-soft)"/>
+      <ellipse cx="54" cy="36" rx="16" ry="10" transform="rotate(-18 54 36)" style="fill:none;stroke:var(--c-emerald);stroke-width:5"/>
+      <ellipse cx="86" cy="36" rx="16" ry="10" transform="rotate(18 86 36)" style="fill:none;stroke:var(--c-emerald);stroke-width:5"/>
+    </g>
+  </svg>
+  <button class="gift-btn" id="openGift" type="button">TAP TO OPEN YOUR SURPRISE</button>
+</div>
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- Floating navigation -->
+<nav id="floatnav">
+  <a href="#hero">Intro</a>
+  <a href="#story">Her Path</a>
+  <a href="#character">Her Light</a>
+  <a href="#cake">Cake</a>
+  <a href="#ayah">Dua</a>
+  <a href="#message">Message</a>
+</nav>
+
+<!-- 1. HERO -->
+<section id="hero" class="grain">
+  <div class="hero-deco" id="heroDeco">
+    <div class="balloon" style="left:8%;--bg:#f08fb5;--t:14s;--d:0s"></div>
+    <div class="balloon" style="left:22%;--bg:#f2cf7a;--t:17s;--d:2.5s"></div>
+    <div class="balloon" style="left:38%;--bg:#b9a3ee;--t:15s;--d:5s"></div>
+    <div class="balloon" style="left:62%;--bg:#ffb199;--t:16s;--d:1.2s"></div>
+    <div class="balloon" style="left:78%;--bg:#c2306f;--t:18s;--d:3.8s"></div>
+    <div class="balloon" style="left:90%;--bg:#f2cf7a;--t:14s;--d:6s"></div>
+  </div>
+  <div class="hero-stage">
+    <div class="hero-line day" id="h-day" style="font-size:clamp(2.8rem,10vw,6.6rem);">Happy Birthday</div>
+    <div class="hero-line month" id="h-month" style="margin-top:.6rem;">A Birthday Wish</div>
+    <div class="hero-line name shimmer" id="h-name" style="margin-top:1.6rem;">Rifat Nisha</div>
+    <div class="hero-line tagline" id="h-tag" style="margin-top:1.4rem;">A few warm words from your teacher, written with a proud and happy heart.</div>
+  </div>
+  <div class="hero-scroll-cue" id="h-scroll">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- 2. PANEL + GLASS -->
+<section class="section tone-pearl" style="padding-top:4rem;">
+  <div class="section-inner">
+    <div class="grid md:grid-cols-5 gap-6 items-stretch">
+      <div class="md:col-span-3 panel-frame reveal-scale" style="min-height:62vh;">
+        <div class="text-center px-4">
+          <div class="big-num" style="font-size:clamp(2.6rem,7vw,5rem);">Happy Birthday</div>
+          <div class="big-num-label">To a brilliant mind</div>
+        </div>
+        <div class="panel-overlay-side"></div>
+      </div>
+      <div class="md:col-span-2 flex items-end md:items-center">
+        <div class="glass-cinematic reveal d2 w-full p-8 md:p-10 rounded-md">
+          <div class="eyebrow">A&nbsp;BIRTHDAY&nbsp;WISH&nbsp;·&nbsp;FROM&nbsp;YOUR&nbsp;TEACHER</div>
+          <h2 class="font-display mt-4" style="font-size:clamp(2rem,4vw,2.8rem); font-weight:500;">Rifat</h2>
+          <div class="font-heading mt-2" style="color:var(--c-emerald); letter-spacing:.3em; font-size:.85rem;">WITH PRIDE</div>
+          <p class="mt-5 font-heading" style="font-weight:300; font-size:1.05rem; line-height:1.6;">Today is your day, and I want you to feel how much you are appreciated.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. CINEMATIC INTRO -->
+<section class="section tone-mist">
+  <div class="section-inner text-center max-w-3xl mx-auto">
+    <p class="reveal font-display" style="font-size:clamp(1.5rem,4vw,2.4rem); font-weight:500; line-height:1.4; color:var(--c-ink);">Some students simply stand out,</p>
+    <p class="reveal d2 font-display mt-5" style="font-size:clamp(1.5rem,4vw,2.4rem); font-weight:500; line-height:1.4; color:var(--c-ink);">not because they are loud, but because they are real.</p>
+    <p class="reveal d4 font-heading mt-10" style="color:var(--c-rose); letter-spacing:.08em; font-size:1.1rem;">You are one of those students...</p>
+    <p class="reveal d5 font-display mt-3" style="font-size:clamp(1.3rem,3.4vw,2rem); font-style:italic; color:var(--c-ink-soft);">and that is why this birthday wish comes from the heart.</p>
+  </div>
+</section>
+
+<!-- 4. HER PATH — TIMELINE -->
+<section id="story" class="section tone-pearl">
+  <div class="section-inner">
+    <div class="text-center mb-16 reveal">
+      <div class="eyebrow">HER PATH</div>
+      <h2 class="font-display mt-4" style="font-size:clamp(2.1rem,5vw,3.4rem); font-weight:500;">The Student I Know</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-track">
+        <div class="timeline-item reveal-line ">
+          <div class="timeline-num">01</div>
+          <div class="timeline-title">A Sharp, Curious Mind</div>
+          <div class="timeline-sub">You grasp ideas quickly and ask the questions that matter.</div>
+        </div>
+        <div class="timeline-item reveal-line d1">
+          <div class="timeline-num">02</div>
+          <div class="timeline-title">Hard Work, Every Day</div>
+          <div class="timeline-sub">Your effort in BS IT shows in everything you do.</div>
+        </div>
+        <div class="timeline-item reveal-line d2">
+          <div class="timeline-num">03</div>
+          <div class="timeline-title">A Voice People Enjoy</div>
+          <div class="timeline-sub">The way you speak is cool, clear, and unforgettable.</div>
+        </div>
+        <div class="timeline-item reveal-line d3">
+          <div class="timeline-num">04</div>
+          <div class="timeline-title">Humble Through It All</div>
+          <div class="timeline-sub">With all your talent, you stay kind and down to earth.</div>
+        </div>
+        <div class="timeline-item reveal-line d4">
+          <div class="timeline-num">05</div>
+          <div class="timeline-title" style="color:var(--c-rose);">The Best Is Ahead</div>
+          <div class="timeline-sub">This year, and every year after, I am sure you will shine.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PANEL SCENE 2 -->
+<section class="section tone-blush" style="padding:5rem 1.5rem;">
+  <div class="section-inner">
+    <div class="panel-frame reveal-scale mx-auto" style="max-width:520px; aspect-ratio:4/5;">
+      <div class="text-center px-4">
+        <div class="big-num" style="font-size:clamp(2.6rem,7vw,4.5rem);">Shine On</div>
+        <div class="big-num-label">Make this year yours</div>
+      </div>
+      <div class="panel-overlay-side"></div>
+      <div class="glass-subtle absolute left-5 bottom-5 md:left-7 md:bottom-7 rounded-full px-5 py-2.5">
+        <span class="font-heading" style="font-size:.68rem; letter-spacing:.18em; color:var(--c-rose);">FROM ALI ATIF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WHO YOU ARE — CARDS -->
+<section id="character" class="section tone-mist">
+  <div class="section-inner">
+    <div class="text-center mb-16 reveal">
+      <div class="eyebrow">HER LIGHT</div>
+      <h2 class="font-display mt-4" style="font-size:clamp(2.1rem,5vw,3.4rem); font-weight:500;">Why You Stand Out.</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="char-card glass-medium reveal d1">
+        <span class="mark"></span>
+        <h3>Intelligent</h3>
+        <p>You understand deeply, connect ideas quickly, and make hard topics look easy.</p>
+      </div>
+      <div class="char-card glass-medium reveal d2">
+        <span class="mark"></span>
+        <h3>Hardworking</h3>
+        <p>You give your best without being asked, and your results prove it.</p>
+      </div>
+      <div class="char-card glass-medium reveal d3">
+        <span class="mark"></span>
+        <h3>Wonderful Speaker</h3>
+        <p>Your way of speaking is confident, cool, and amazing to listen to.</p>
+      </div>
+      <div class="char-card glass-medium reveal d4">
+        <span class="mark"></span>
+        <h3>Humble</h3>
+        <p>You never show off. Your modesty makes your talent even more admirable.</p>
+      </div>
+      <div class="char-card glass-medium reveal d5">
+        <span class="mark"></span>
+        <h3>Kind</h3>
+        <p>Your gentle heart makes people around you feel respected and valued.</p>
+      </div>
+      <div class="char-card glass-medium reveal d6">
+        <span class="mark"></span>
+        <h3>Feels Deeply</h3>
+        <p>You feel things strongly because you care strongly, and that sincerity is rare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. WISH CHECKLIST -->
+<section class="section tone-pearl">
+  <div class="section-inner max-w-2xl mx-auto">
+    <div class="glass-strong reveal-scale rounded-md p-10 md:p-14 text-center">
+      <div class="eyebrow">MY WISHES FOR YOU</div>
+      <div class="rule my-7"></div>
+      <p class="font-heading" style="letter-spacing:.2em; font-size:.75rem; color:var(--c-ink-faint);">THIS YEAR</p>
+      <p class="font-display mt-2" style="font-size:1.7rem; color:var(--c-rose); font-style:italic;">Blessed &amp; Unstoppable</p>
+      <ul class="checklist mt-9 space-y-3" style="text-align:left; max-width:420px; margin-left:auto; margin-right:auto;">
+        <li>May every semester bring you top results</li>
+        <li>May your code run perfectly on the first try</li>
+        <li>May your big dreams in IT come true</li>
+        <li>May the people around you be as kind as you are</li>
+        <li>May this be your happiest year yet, inshallah</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7b. MAKE A WISH — CAKE -->
+<section id="cake" class="section tone-mist">
+  <div class="section-inner max-w-xl mx-auto text-center">
+    <div class="eyebrow reveal">MAKE A WISH</div>
+    <h2 class="font-display mt-4 reveal d1" style="font-size:clamp(2rem,4.6vw,3rem); font-weight:500;">Close your eyes, Rifat.</h2>
+    <div id="cakeBox" class="reveal-scale d2 mt-10">
+      <svg class="cake" viewBox="0 0 240 210" aria-label="Birthday cake with three candles">
+        <ellipse cx="120" cy="188" rx="112" ry="12" style="fill:rgba(42,31,61,.12)"/>
+        <rect x="26" y="124" width="188" height="58" rx="12" style="fill:var(--c-rose-soft)"/>
+        <rect x="52" y="86" width="136" height="44" rx="11" style="fill:var(--c-rose)"/>
+        <path d="M52 98q10 16 20 0t20 0 20 0 20 0 20 0 16 0v-10H52z" style="fill:#fff"/>
+        <path d="M26 136q12 16 24 0t24 0 24 0 24 0 24 0 24 0 24 0 22 0v-12H26z" style="fill:#fff"/>
+        <circle cx="70" cy="160" r="4" style="fill:var(--c-emerald-soft)"/><circle cx="120" cy="164" r="4" style="fill:var(--c-emerald-soft)"/><circle cx="170" cy="160" r="4" style="fill:var(--c-emerald-soft)"/>
+        <g><rect x="87" y="58" width="7" height="30" rx="2" style="fill:var(--c-emerald-soft)"/><rect x="117" y="52" width="7" height="36" rx="2" style="fill:#b9a3ee"/><rect x="147" y="58" width="7" height="30" rx="2" style="fill:var(--c-emerald-soft)"/></g>
+        <ellipse class="flame" cx="90.5" cy="49" rx="5" ry="9" style="fill:#ffb347"/>
+        <ellipse class="flame" cx="120.5" cy="43" rx="5" ry="9" style="fill:#ffb347"/>
+        <ellipse class="flame" cx="150.5" cy="49" rx="5" ry="9" style="fill:#ffb347"/>
+      </svg>
+    </div>
+    <button class="gift-btn mt-10" id="blowBtn" type="button">BLOW THE CANDLES</button>
+    <p id="wishNote" class="font-display mt-6" style="font-size:1.25rem;"></p>
+  </div>
+</section>
+
+<!-- 8. THANK YOU SECTION -->
+<section class="section tone-blush">
+  <div class="section-inner max-w-2xl mx-auto text-center">
+    <div class="eyebrow reveal">A TEACHER'S GRATITUDE</div>
+    <h2 class="font-display mt-4 reveal d1" style="font-size:clamp(2rem,4.6vw,3rem); font-weight:500;">Proud to be your teacher.</h2>
+    <p class="mt-8 reveal d2 font-heading" style="font-weight:300; font-size:1.05rem; line-height:1.9;">
+      Teaching you has been a real pleasure. You work hard, you think sharply, and you stay humble through it all. Watching you grow in your BS IT journey makes me genuinely proud, and I am grateful to have a student like you.
+    </p>
+  </div>
+</section>
+
+<!-- 9. DUA / AYAH SECTION -->
+<section id="ayah" class="section tone-mist" style="min-height:80vh;">
+  <div class="section-inner max-w-2xl mx-auto text-center">
+    <div class="eyebrow reveal">A DUA FOR YOUR JOURNEY</div>
+    <p class="ayah-arabic reveal d1 mt-8">رَّبِّ زِدْنِي عِلْمًا</p>
+    <p class="ayah-translation reveal d2 mt-5">"My Lord, increase me in knowledge."</p>
+    <p class="ayah-ref reveal d2 mt-4">Surah Taha (20:114)</p>
+    <div class="rule my-12 reveal d1"></div>
+    <p class="ayah-arabic small reveal d3 mt-8">رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي</p>
+    <p class="ayah-translation reveal d4 mt-5">"My Lord, expand my chest and ease my task for me."</p>
+    <p class="ayah-ref reveal d4 mt-4">Surah Taha (20:25-26)</p>
+    <div class="rule my-12 reveal d3"></div>
+    <p class="ayah-arabic small reveal d5 mt-8">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</p>
+    <p class="ayah-translation reveal d6 mt-5">"Indeed, with hardship comes ease."</p>
+    <p class="ayah-ref reveal d6 mt-4">Surah Ash-Sharh (94:5)</p>  </div>
+</section>
+
+<!-- 9b. GRATITUDE & BLESSINGS -->
+<section id="dua" class="section tone-pearl" style="min-height:80vh;">
+  <div class="section-inner max-w-2xl mx-auto text-center">
+    <div class="eyebrow reveal">GRATITUDE &amp; BLESSINGS</div>
+    <p class="ayah-arabic reveal d1 mt-8">لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ</p>
+    <p class="ayah-translation reveal d2 mt-5">"If you are grateful, I will surely increase you."</p>
+    <p class="ayah-ref reveal d2 mt-4">Surah Ibrahim (14:7)</p>
+    <div class="rule my-12 reveal d1"></div>
+    <p class="ayah-arabic small reveal d4 mt-8">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً</p>
+    <p class="ayah-translation reveal d5 mt-5">"Our Lord, grant us good in this world and good in the Hereafter."</p>
+    <p class="ayah-ref reveal d5 mt-4">Surah Al-Baqarah (2:201)</p>  </div>
+</section>
+
+<!-- 10. FROM THE HEART -->
+<section class="section tone-blush" style="min-height:100vh;">
+  <div class="section-inner max-w-2xl mx-auto text-center">
+    <div class="eyebrow reveal">FROM THE HEART...</div>
+    <p class="font-display reveal d1" style="font-size:clamp(1.2rem,2.6vw,1.55rem); line-height:1.85; font-weight:500; color:var(--c-ink); margin-top:1.5rem;" >Rifat, you are intelligent, hardworking, and one of the most humble and kind people I have had the joy to teach.</p>
+    <p class="font-display reveal d2" style="font-size:clamp(1.2rem,2.6vw,1.55rem); line-height:1.85; font-weight:500; color:var(--c-ink); margin-top:1.5rem;" >The way you speak, the way you think, and the way you care make you truly special. Never doubt how much that is valued.</p>
+    <p class="font-display reveal d3" style="font-size:clamp(1.2rem,2.6vw,1.55rem); line-height:1.85; font-weight:500; color:var(--c-ink); margin-top:1.5rem;" >Keep believing in yourself, because you are going to go far.</p>
+    <p class="mt-6 reveal d4 font-heading" style="font-size:1.05rem; color:var(--c-ink-faint); font-weight:300;">And from the heart...</p>
+    <p class="mt-2 reveal d5 font-display" style="font-size:clamp(1.2rem,2.6vw,1.55rem); font-style:italic; color:var(--c-rose);">may Allah fill your life with happiness, health, success, and every good thing, inshallah.</p>
+    <h2 class="mt-14 reveal d6 font-display" style="font-size:clamp(2.2rem,5.5vw,3.6rem); font-weight:600;">Happy Birthday, Rifat.</h2>
+  </div>
+</section>
+
+<!-- 11. MAJOR REVEAL -->
+<section id="reveal" class="section tone-pearl" style="min-height:100svh; position:relative; overflow:hidden; text-align:center;">
+  <div class="light-sweep" id="reveal-sweep"></div>
+  <div class="relative z-10">
+    <div class="big-reveal-line" id="r-day" style="font-size:clamp(2.6rem,10vw,7rem); color:var(--c-rose);">Happy Birthday.</div>
+    <div class="big-reveal-line font-heading" id="r-month" style="font-size:clamp(1rem,3.4vw,1.7rem); letter-spacing:.5em; text-transform:uppercase; font-weight:400; margin-top:.8rem; color:var(--c-ink-soft);">To A Brilliant Student</div>
+    <div class="big-reveal-line shimmer" id="r-name" style="font-size:clamp(1.8rem,5vw,3.2rem); font-style:italic; margin-top:2rem;">Rifat Nisha</div>
+    <div class="big-reveal-line" id="r-hb" style="font-size:clamp(2.4rem,7vw,4.6rem); font-weight:600; margin-top:2.2rem;">Keep Shining</div>
+    <div class="big-reveal-line" id="r-bro" style="font-size:clamp(2.4rem,7vw,4.6rem); font-weight:600; color:var(--c-emerald); margin-top:.3rem;">Always.</div>
+  </div>
+</section>
+
+<!-- 12. FINAL PANEL -->
+<section id="memories" class="section tone-mist" style="padding-top:5rem;">
+  <div class="section-inner">
+    <div class="panel-frame reveal-scale mx-auto" style="max-width:780px; aspect-ratio:16/9;">
+      <div class="text-center px-6">
+        <div class="big-num" style="font-size:clamp(2rem,5.4vw,3.4rem);">Success, Joy &amp; a Beautiful Life for You</div>
+      </div>
+      <div class="panel-overlay-side"></div>
+      <div class="absolute inset-x-0 bottom-0 p-8 md:p-12 text-center">
+        <p class="font-display reveal d2 in" style="font-size:clamp(1.3rem,3vw,1.9rem); font-style:italic; color:var(--c-ink);">Ameen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. CLOSING MESSAGE + SIGNATURE -->
+<section id="message" class="section tone-blush" style="min-height:90vh;">
+  <div class="section-inner max-w-xl mx-auto text-center">
+    <p class="reveal font-heading" style="font-weight:300; font-size:1.05rem; line-height:2;">
+      May Allah keep you happy always.<br>
+      May He grant you good health and a long, blessed life.<br>
+      May He ease every exam, every project, and every path you walk.<br>
+      May He fill your days with peace and your heart with joy.<br>
+      And may He reward you for every kindness you have shown, ameen.
+    </p>
+    <p class="reveal d2 font-display mt-10" style="font-size:1.3rem; font-style:italic; color:var(--c-rose);">Thank you for being such a wonderful student.</p>
+    <h2 class="reveal d3 font-display mt-10" style="font-size:clamp(2.1rem,5vw,3.2rem); font-weight:600;">Happy Birthday, Rifat Nisha.</h2>
+
+    <div class="rule my-14 reveal d4"></div>
+
+    <div class="reveal d5">
+      <p class="signature">From Ali Atif</p>
+      <p class="font-heading mt-5" style="font-size:.78rem; letter-spacing:.16em; color:var(--c-ink-faint); line-height:2;">
+        Proud of you, always.<br>
+        Grateful for you, always.<br>
+        Praying for you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div style="height:8vh; background:var(--c-blush);"></div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+/* ----------------------------------------------------------------
+   No images are used on this page by design — all visuals are
+   built with CSS gradients, typography, and layout only.
+---------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------
+   LOADER
+---------------------------------------------------------------- */
+const loader = document.getElementById("loader");
+
+/* ----------------------------------------------------------------
+   CUSTOM CURSOR
+---------------------------------------------------------------- */
+const dot = document.getElementById("cursor-dot");
+const ring = document.getElementById("cursor-ring");
+let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX; mouseY = e.clientY;
+  dot.style.left = mouseX + "px";
+  dot.style.top = mouseY + "px";
+});
+
+function animateRing(){
+  ringX += (mouseX - ringX) * 0.18;
+  ringY += (mouseY - ringY) * 0.18;
+  ring.style.left = ringX + "px";
+  ring.style.top = ringY + "px";
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+document.querySelectorAll("a, button, .char-card").forEach(el => {
+  el.addEventListener("mouseenter", () => ring.classList.add("grow"));
+  el.addEventListener("mouseleave", () => ring.classList.remove("grow"));
+});
+
+/* ----------------------------------------------------------------
+   HERO ENTRANCE ANIMATION
+---------------------------------------------------------------- */
+function fadeIn(el, delay = 0){
+  if(!el) return;
+  setTimeout(() => {
+    el.style.transition = "opacity 1.4s cubic-bezier(.16,.84,.24,1), filter 1.4s cubic-bezier(.16,.84,.24,1), transform 1.4s cubic-bezier(.16,.84,.24,1)";
+    el.style.opacity = "1";
+    el.style.filter = "blur(0)";
+    el.style.transform = "scale(1)";
+  }, delay);
+}
+
+function startHero(){
+  fadeIn(document.getElementById("h-day"), 200);
+  fadeIn(document.getElementById("h-month"), 500);
+  fadeIn(document.getElementById("h-name"), 800);
+  fadeIn(document.getElementById("h-tag"), 1100);
+
+  const scrollCue = document.getElementById("h-scroll");
+  setTimeout(() => {
+    if(scrollCue){
+      scrollCue.style.transition = "opacity 1.2s ease";
+      scrollCue.style.opacity = "1";
+    }
+  }, 1400);
+}
+
+/* ----------------------------------------------------------------
+   FLOATING NAV VISIBILITY
+---------------------------------------------------------------- */
+const floatnav = document.getElementById("floatnav");
+window.addEventListener("scroll", () => {
+  if(window.scrollY > window.innerHeight * 0.6){
+    floatnav.classList.add("show");
+  } else {
+    floatnav.classList.remove("show");
+  }
+});
+
+/* ----------------------------------------------------------------
+   SCROLL-TRIGGERED REVEALS
+---------------------------------------------------------------- */
+const revealEls = document.querySelectorAll(".reveal, .reveal-scale, .reveal-line");
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("in");
+    }
+  });
+}, { threshold: 0.2 });
+revealEls.forEach(el => io.observe(el));
+
+/* ----------------------------------------------------------------
+   BIG REVEAL SEQUENCE
+---------------------------------------------------------------- */
+const revealSection = document.getElementById("reveal");
+let revealPlayed = false;
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting && !revealPlayed){
+      revealPlayed = true;
+      const lines = ["r-day","r-month","r-name","r-hb","r-bro"];
+      lines.forEach((id, i) => {
+        setTimeout(() => fadeIn(document.getElementById(id)), i * 350);
+      });
+    }
+  });
+}, { threshold: 0.4 });
+if(revealSection) revealIO.observe(revealSection);
+
+/* ----------------------------------------------------------------
+   BIRTHDAY ADDITIONS — confetti, surprise gift, sparkles, candles
+---------------------------------------------------------------- */
+const cv = document.createElement("canvas"); cv.id = "confetti"; document.body.appendChild(cv);
+const cx = cv.getContext("2d"); let parts = [], running = false;
+function sizeCv(){ cv.width = innerWidth; cv.height = innerHeight; }
+sizeCv(); addEventListener("resize", sizeCv);
+const COL = ["#c2306f","#f08fb5","#d9a21e","#f2cf7a","#7a5bd0","#ff9a76"];
+function burst(x, y, n = 100){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  for(let i = 0; i < n; i++){
+    const a = Math.random() * Math.PI * 2, sp = 4 + Math.random() * 9;
+    parts.push({ x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 6, w: 6 + Math.random() * 6, h: 4 + Math.random() * 5,
+      r: Math.random() * 6, vr: (Math.random() - .5) * .4, c: COL[(Math.random() * COL.length) | 0], life: 0 });
+  }
+  if(!running){ running = true; requestAnimationFrame(tickConfetti); }
+}
+function tickConfetti(){
+  cx.clearRect(0, 0, cv.width, cv.height);
+  parts = parts.filter(p => p.y < cv.height + 20 && p.life < 260);
+  parts.forEach(p => {
+    p.vy += .22; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life++;
+    cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillStyle = p.c;
+    cx.globalAlpha = Math.max(0, 1 - p.life / 260); cx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); cx.restore();
+  });
+  if(parts.length) requestAnimationFrame(tickConfetti); else running = false;
+}
+
+document.getElementById("openGift").addEventListener("click", () => {
+  if(loader.classList.contains("open")) return;
+  loader.classList.add("open");
+  setTimeout(() => burst(innerWidth / 2, innerHeight / 2, 140), 450);
+  setTimeout(() => {
+    loader.classList.add("hide");
+    document.body.classList.add("opened");
+    startHero();
+    burst(innerWidth / 2, innerHeight * .35, 120);
+  }, 1700);
+});
+
+const deco = document.getElementById("heroDeco");
+for(let i = 0; i < 16; i++){
+  const sp = document.createElement("span"); sp.className = "spark";
+  sp.style.cssText = `left:${Math.random() * 96}%;top:${Math.random() * 90}%;animation-delay:${(Math.random() * 3).toFixed(2)}s;transform:scale(${(.6 + Math.random() * .8).toFixed(2)})`;
+  deco.appendChild(sp);
+}
+
+new IntersectionObserver((es, ob) => {
+  es.forEach(e => { if(e.isIntersecting){ burst(innerWidth / 2, innerHeight * .4, 110); ob.disconnect(); } });
+}, { threshold: .5 }).observe(document.getElementById("reveal"));
+
+document.getElementById("blowBtn").addEventListener("click", (e) => {
+  const box = document.getElementById("cakeBox"), note = document.getElementById("wishNote");
+  if(box.classList.contains("out")) return;
+  box.classList.add("out");
+  note.textContent = "Wish made. May it come true, inshallah.";
+  const r = box.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + r.height * .3, 130);
+  e.currentTarget.style.opacity = ".4"; e.currentTarget.style.pointerEvents = "none";
+});
+</script>
+
+</body>
+</html>
